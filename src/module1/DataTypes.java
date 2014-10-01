@@ -25,7 +25,11 @@ public class DataTypes {
 
 		//Mixing types is unpredictable:
 		char charVar = 'a'+10;
-		System.out.println(charVar+". We have gone along 10 characters in the letter set");
+		System.out.println("character a +10 is: "+charVar+". We have gone along 10 characters in the letter set");
+		//add int's to doubles
+		System.out.println("Integer plus double gives: "+(intVar+doubVar)+". Which looks like a double!");
+		//add long to byte?
+		//add floats and doubles
 		
 
 	}
