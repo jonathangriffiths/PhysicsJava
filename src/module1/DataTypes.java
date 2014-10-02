@@ -1,6 +1,7 @@
 package module1;
 
 public class DataTypes {
+	
 
 	public static void main(String[] args) {
 
@@ -28,10 +29,28 @@ public class DataTypes {
 		System.out.println("character a +10 is: "+charVar+". We have gone along 10 characters in the letter set");
 		//add int's to doubles
 		System.out.println("Integer plus double gives: "+(intVar+doubVar)+". Which looks like a double!");
-		//add long to byte?
-		//add floats and doubles
-		
+		//add long to byte
+		System.out.println("Long plus float gives: "+(longVar+floatVar)+". Which looks like a float");
+		//boolean boolVar=true;
+		//We can't use our arithmetic tools on bools
+		//String plus int
+		String stringVar="Hello!";
+		System.out.println("String plus int gives: "+(stringVar+intVar)+". Which is a concatenation.");
+		//String plus float:
+		System.out.println("String plus float gives: "+(stringVar+floatVar)+". Which is a concatenation as well.");
 
+		//Uninitialised variable stuff:
+		//int j=1; int i; j=i+1;
+		//System.out.println("Here is j: "+j+". Here is i: "+i+".");
+		//This will return an error as we have no initialised i.
+		//i is a local variable because we have created it inside the public static void main part of the code
+		//local variables are not assigned the default value (here 0 for int)
+		
+		//casts
+		double dub4cast = 4.99;
+		int intcast = (int) dub4cast;
+		System.out.println("New integer: "+intcast); System.out.println("Old double: "+dub4cast);
+		System.out.println("The number is not rounded up, but instead anything after the dec. point is lost.");
 	}
 
 }
