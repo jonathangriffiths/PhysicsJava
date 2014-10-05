@@ -30,7 +30,7 @@ public class AlgorithmControl {
 	}
 	
 	public static void incrementfor(){
-		//Alternative method
+		//Alternative method, more concise
 		for(double l=2.4; l<=14.9; l+=0.5){
 			System.out.println(l);
 		}
@@ -45,6 +45,7 @@ public class AlgorithmControl {
 			}
 			loop_counter++;
 		}
+		System.out.println("This worked through " + loop_counter +" loops, printing every "+100+" loops");
 		return loop_counter;
 	}
 	
@@ -57,6 +58,7 @@ public class AlgorithmControl {
 			}
 			loop_counter++;
 		}
+		System.out.println("This worked through " + loop_counter +" loops, printing every "+LoopSteps+" loops");
 		return loop_counter;
 	}
 
@@ -71,12 +73,12 @@ public class AlgorithmControl {
 		incrementfor();
 		System.out.println("Timer");
 		timer();
-		System.out.println("Improved Timer: ");
+		System.out.println("Improved Timer (first 100, then 50000, both 4s): ");
 		int moreprints =timerImproved(4000, 100);
 		int fewerprints=timerImproved(4000, 50000);
-		System.out.println("Loops for printing every hundred = "+moreprints+". Loops for printing every 50k = "+fewerprints+". Ratio (roughly!! - as an int) = "+(fewerprints/moreprints));
+		System.out.println("Loops for printing every hundred = "+moreprints+". Loops for printing every 50k = "+fewerprints+". Ratio = "+(((double) fewerprints)/ ((double) moreprints)));
 		System.out.println("We get through many more loops when we have less printing. This is because we are asking the CPU to do less work.");
 		System.out.println("Because the CPU is doing less work (the printing is an extra command that must be run though), it can do more of the 'empty' cycles where it does not print to screen.");
-		System.out.println("As a result, we get through more loops in the same amount of time.");
+		System.out.println("As a result, we get through more loops in total in the same amount of time.");
 	}
 }

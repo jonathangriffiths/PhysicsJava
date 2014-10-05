@@ -96,12 +96,14 @@ public class VectorMethods {
 		System.out.println("");
 		System.out.println("The angle between the vectors is (by element, in degrees): "+vm.angle(v1a, v1b, v1c, v2a, v2b, v2c));
 		System.out.println("The angle between the vectors is (by array, in degrees): "+vm.angleArray(vector1, vector2));
+		System.out.println("Happily, we see agreement with all of the functions.");
 		System.out.println("");
 		System.out.println("We now switch to vectors {1,4,1} and {0,0,0}");
 		System.out.println("The angle done element-wise returns: "+vm.angle(fv1a, fv1b, fv1c, fv2a, fv2b, fv2c)+" degrees");
 		System.out.println("The angle done array-wise returns: "+vm.angleArray(failvector1, failvector2)+" degrees");
-		System.out.println("Both return NaN (not a number) because of 0/0. Here is 0/0: "+0.0/0.0+". Meanwhile, 1/0: "+1.0/0.0+" (all in doubles)");
-		System.out.println("Integer maths which fails like this throws errors, doubles gives us the Infinity/NaN");
+		System.out.println("Both return NaN (not a number) because of 0.0/0.0. Here is 0.0/0.0: "+0.0/0.0+". Meanwhile, 1.0/0.0: "+1.0/0.0+" (all in doubles)");
+		System.out.println("Integer maths which fails like this throws errors, doubles gives us the Infinity/NaN.");
+		System.out.println("I'd think this is because the double maths is only approximate, so can tolerate these extremes, whereas the int type cannot.");
 	}
 
 }

@@ -50,13 +50,14 @@ public class DataTypes {
 		//System.out.println("Here is j: "+j+". Here is i: "+i+".");
 		//This will return an error as we have not initialised i.
 		//i is a local variable because we have created it inside the public static void main part of the code
-		//local variables are not assigned the default value (here 0 for int)
+		//local variables are *not* assigned the default value (here 0 for int)
+		//We ought to have declared this outside of a method if we wanted it to be assigned 0 by default
 		
 		//casts
 		double dub4cast = 4.99;
 		int intcast = (int) dub4cast;
 		System.out.println("New integer: "+intcast); System.out.println("Old double: "+dub4cast);
-		System.out.println("The number is not rounded up, but instead anything after the dec. point is lost.");
+		System.out.println("The number is not rounded up (as expected), but instead anything after the dec. point is lost. This is seen in Python too.");
 	}
 
 }
