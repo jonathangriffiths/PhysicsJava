@@ -5,7 +5,7 @@ public class ThreeVector {
 	private double xCoord;
 	private double yCoord;
 	private double zCoord;
-	//CONSTRUCTOR - with arguments
+	//CONSTRUCTOR - with arguments (3x double, x y & z)
 	public ThreeVector(double x, double y, double z){
 		xCoord = x;
 		yCoord = y;
