@@ -3,17 +3,48 @@ package module2;
 public class TestThreeVector {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		//Assign Variables
+		ThreeVector v1 = new ThreeVector(3,4,1);
+		ThreeVector v2 = new ThreeVector(5,3,2);
+		ThreeVector v3 = new ThreeVector(0,0,0);
 
-		double x = 2;
-		double y=2;
-		int z=2;
-		ThreeVector vector = new ThreeVector(x,y,z);
-		System.out.println(vector.magnitude());
-		System.out.println(ThreeVector.magnitude(vector));
-		ThreeVector unit_vector=ThreeVector.unitVector(vector);
-		System.out.println(ThreeVector.toString(vector));
-		System.out.println(ThreeVector.toString(unit_vector));
+		ThreeVector unit_v1 = ThreeVector.unitVector(v1);
+		ThreeVector unit_v2 = ThreeVector.unitVector(v2);
+		ThreeVector unit_v3 = ThreeVector.unitVector(v3);
+		//Print vectors
+		System.out.println("Vector 1:");
+		System.out.println(v1);
+		System.out.println("Vector 2:");
+		System.out.println(v2);
+		System.out.println("Vector 3:");
+		System.out.println(v3);
+		System.out.println("");
+		//Print unit vectors
+		System.out.println("Unit Vector 1:");
+		System.out.println(unit_v1);
+		System.out.println("Unit Vector 2:");
+		System.out.println(unit_v2);
+		System.out.println("Unit Vector 3:");
+		System.out.println(unit_v3);
+		System.out.println("");
+		//Print dot/cross products:
+		System.out.println("Vector 1 . Vector 2:");
+		System.out.println(ThreeVector.scalarProduct(v1, v2));
+		System.out.println("Vector 1 . Vector 3:");
+		System.out.println(ThreeVector.scalarProduct(v1, v3));
+		System.out.println("Vector 1 x Vector 2:");
+		System.out.println(ThreeVector.vectorProduct(v1, v2));
+		System.out.println("Vector 1 x Vector 3:");
+		System.out.println(ThreeVector.vectorProduct(v1, v3));
+		System.out.println("");
+		//Print angles
+		System.out.println("Angle Vector 1 to Vector 2: (radians)");
+		System.out.println(ThreeVector.angle(v1, v2));
+		System.out.println("Angle Vector 1 to Vector 3: (radians, and div0...)");
+		System.out.println(ThreeVector.angle(v1, v3));
+		System.out.println("");
+		//No toString present - you get somehting along the lines of module2.ThreeVector@7f31245a
+		//First two are self explanatory - the @ location presumably refers to a memory address.
 
 	}
 
