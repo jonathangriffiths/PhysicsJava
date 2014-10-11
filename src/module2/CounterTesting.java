@@ -1,6 +1,6 @@
 package module2;
 
-public class Testing {
+public class CounterTesting {
 
 
 	public static void main(String[] args) {
