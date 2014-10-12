@@ -53,14 +53,10 @@ public class Complex {
 		if(number1.re==number2.re && number1.im==number2.im){return true;}
 		else{return false;}
 	}
-	//toString
+	//toString (suspect this isn't needed at all)
 	public static String toString(Complex number){
 		String str=""+number.re+" + "+number.im+"i";
 		return str;
-	}
-	//non-static toString
-	public String toString(){
-		return toString(this);
 	}
 	//set from mod/arg
 	public static Complex setFromModulusAngle(double mag, double ang){
@@ -74,7 +70,7 @@ public class Complex {
 		double newIm=number1.im + number2.im;
 		return new Complex(newRe, newIm);
 	}
-	//subtraction
+	//subtraction - subtract 2 from 1
 	public static Complex subtract(Complex number1, Complex number2){
 		double newRe=number1.re - number2.re;
 		double newIm=number1.im - number2.im;
@@ -92,6 +88,45 @@ public class Complex {
 		Complex top=(multiply(number1, conjugate(number2)));
 		double bottom=number2.re*number2.re + number2.im*number2.im;
 		return new Complex(top.re/bottom, top.im/bottom);
+	}
+
+	////NON-STATIC METHODS
+	public double real(){
+		return real(this);
+	}
+	public double imag(){
+		return imag(this);
+	}
+	public double modulus(){
+		return modulus(this);
+	}
+	public double angle(){
+		return angle(this);
+	}
+	public Complex conjugate(){
+		return conjugate(this);
+	}
+	public Complex normalise(){
+		return normalise(this);
+	}
+	public boolean equals(Complex number){
+		return equals(number);
+	}
+	//non-static toString (very important!)
+	public String toString(){
+		return toString(this);
+	}
+	public Complex add(Complex number){
+		return add(this, number);
+	}
+	public Complex subtract(Complex number){
+		return subtract(this, number);
+	}
+	public Complex multiply(Complex number){
+		return multiply(this, number);
+	}
+	public Complex divide(Complex number){
+		return divide(this, number);
 	}
 }
 
