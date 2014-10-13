@@ -15,7 +15,7 @@ public class FallingParticle {
 		d=drag;
 	}
 
-	///NON-STATIC METHODS - these make more sense for what we are doing.
+	///NON-STATIC METHODS - these make more sense for what we are doing, always want to refer to one instance..
 	public void setZ(double height){
 		z=height;
 	}
