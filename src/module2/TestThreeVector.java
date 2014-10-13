@@ -39,9 +39,8 @@ public class TestThreeVector {
 		System.out.println(ThreeVector.angle(v1, v2));
 		System.out.println("Angle Vector 1 to Vector 3: (radians, and div0...)");
 		System.out.println(ThreeVector.angle(v1, v3)+"\n");
-		//No toString present - you get somehting along the lines of module2.ThreeVector@7f31245a
+		//No toString present - you get something along the lines of module2.ThreeVector@7f31245a
 		//First two are self explanatory - the @ location presumably refers to a memory address.
-
 	}
 
 }

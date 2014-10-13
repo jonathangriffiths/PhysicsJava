@@ -10,8 +10,7 @@ public class ThreeVector {
 		xCoord = x;
 		yCoord = y;
 		zCoord = z;
-		if(x==0 && y==0 && z==0) 
-			System.out.println("WARNING: value of 0 for all terms! Beware div0.");
+		if(x==0 && y==0 && z==0){System.out.println("WARNING: value of 0 for all terms! Beware div0.");}
 	}
 	//CONSTRUCTOR - empty
 	public ThreeVector(){
@@ -22,7 +21,7 @@ public class ThreeVector {
 
 	//MAGNITUDE
 	public static double magnitude(ThreeVector vector){
-		double sumsquareX=vector.xCoord*vector.xCoord; // much more readable split up
+		double sumsquareX=vector.xCoord*vector.xCoord; // much more readable split up like this than one giant line
 		double sumsquareY=vector.yCoord*vector.yCoord;
 		double sumsquareZ=vector.zCoord*vector.zCoord;
 		double sumsquaretot=sumsquareX + sumsquareY + sumsquareZ;

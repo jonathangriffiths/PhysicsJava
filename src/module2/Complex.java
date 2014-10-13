@@ -53,7 +53,8 @@ public class Complex {
 		if(number1.re==number2.re && number1.im==number2.im){return true;}
 		else{return false;}
 	}
-	//toString (suspect this isn't needed at all)
+	//toString (suspect this isn't needed at all,a non-static one does the job)
+	//However, since the non-static one refers to this, I'll just leave it in.
 	public static String toString(Complex number){
 		String str=""+number.re+" + "+number.im+"i";
 		return str;
@@ -110,7 +111,7 @@ public class Complex {
 		return normalise(this);
 	}
 	public boolean equals(Complex number){
-		return equals(number);
+		return equals(this, number);
 	}
 	//non-static toString (very important!)
 	public String toString(){

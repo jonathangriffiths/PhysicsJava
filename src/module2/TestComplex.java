@@ -13,8 +13,8 @@ public class TestComplex {
 		System.out.println("c1/c2 is: "+Complex.divide(c1, c2)+"\n");
 		System.out.println("c1*I is: "+Complex.multiply(c1, Complex.I));
 		System.out.println("c1/0 is: "+Complex.divide(c1, Complex.ZERO)+"\n");
-		System.out.println("c1*conjugate(c2) (stars would be confusing!) is: "+Complex.multiply(c1, Complex.conjugate(c2)));
-		System.out.println("c2*conjugate(c2) is (mod squared): "+Complex.multiply(c2, Complex.conjugate(c2)));
+		System.out.println("c1*conjugate(c2) (stars for conj would be confusing!) is: "+Complex.multiply(c1, Complex.conjugate(c2)));
+		System.out.println("c2*conjugate(c2) is (mod squared): "+Complex.multiply(c2, Complex.conjugate(c2)));	
 	}
 
 }
