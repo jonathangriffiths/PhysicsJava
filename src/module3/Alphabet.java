@@ -1,6 +1,7 @@
 package module3;
 
 import java.util.Random;
+//All other classes needed are loaded by default by Eclipse
 
 
 
@@ -18,11 +19,12 @@ public class Alphabet {
 
 	public static void main(String[] args) {	
 		//INIT
-		StringBuilder str = new StringBuilder(1000); //pre-allocating memory like this is better, don't need to declare public/private etc. for what we have been asked to do
+		int looplength = 1000;
+		StringBuilder str = new StringBuilder(looplength); //pre-allocating memory like this is better, don't need to declare public/private etc. for what we have been asked to do
 		int exceptionCount = 0;
 		int runningTotal = 0;
 		//LOOP
-		for(int i=1; i<=1000; i++){
+		for(int i=looplength; i<=1000; i++){
 			char character=randomCharacter();//generate char
 			if(Character.isLetterOrDigit(character)==true){//check if alphanumeric
 				str.append(character);//append
