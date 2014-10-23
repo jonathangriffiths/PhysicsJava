@@ -86,7 +86,7 @@ public class Complex {
 		double newRe=number1.re*number2.re - number1.im*number2.im;
 		return new Complex(newRe, newIm);
 	}
-	//division - NOTE: arguments are number1/number2
+	//division - NOTE: arguments are in the order number1/number2
 	public static Complex divide(Complex number1, Complex number2) throws Exception{
 		//method is multiply top and bottom by conj(number1)
 		if(number2 == ZERO){

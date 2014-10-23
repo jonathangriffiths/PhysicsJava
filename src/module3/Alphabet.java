@@ -11,7 +11,7 @@ public class Alphabet {
 	
 	//INIT random character function
 	public static char randomCharacter(){
-		int value=generator.nextInt(128);
+		int value=generator.nextInt(128);//128 exclusive, inc 0.
 		char character = (char) value;
 		return character;
 	}
@@ -20,11 +20,11 @@ public class Alphabet {
 	public static void main(String[] args) {	
 		//INIT
 		int looplength = 1000;
-		StringBuilder str = new StringBuilder(looplength); //pre-allocating memory like this is better, don't need to declare public/private etc. for what we have been asked to do
+		StringBuilder str = new StringBuilder(looplength); //pre-allocating memory like this is better
 		int exceptionCount = 0;
 		int runningTotal = 0;
 		//LOOP
-		for(int i=looplength; i<=1000; i++){
+		for(int i=1; i<=looplength; i++){
 			char character=randomCharacter();//generate char
 			if(Character.isLetterOrDigit(character)==true){//check if alphanumeric
 				str.append(character);//append

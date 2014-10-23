@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Scanner;
 public class WordCounter {
 
+	//returns user input as a string (return to break)
 	public static String getStringFromKeyword() throws IOException{
 		InputStreamReader r = new InputStreamReader (System.in);
 		BufferedReader b = new BufferedReader(r);
@@ -12,6 +13,7 @@ public class WordCounter {
 		return str;
 	}
 
+	//does what it says - technically counts tokens, not just words
 	public static int countWordsInResource(String urlName) throws IOException{
 			//INIT streams/buffers/scanners
 			URL u = new URL (urlName);

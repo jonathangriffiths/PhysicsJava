@@ -25,32 +25,32 @@ public class TestException {
 
 		try {
 			FallingParticle failParticle = new FallingParticle(1,-1);
-		} catch (Exception ex3) {
-			System.out.println(ex3);
+		} catch (Exception ex4) {
+			System.out.println(ex4);
 		}
 
 		FallingParticle particle = new FallingParticle(1,1);
 
 		try {
 			particle.setZ(-3);
-		} catch (Exception ex4) {
-			System.out.println(ex4);
+		} catch (Exception ex5) {
+			System.out.println(ex5);
 		}
 		//THREEVECTOR
 		try{
 			ThreeVector.unitVector(ThreeVector.ZERO);
-		} catch (Exception ex5) {
-			System.out.println(ex5);
-		}
-		try{
-			ThreeVector.angle(ThreeVector.ZERO, new ThreeVector(1,1,1));
 		} catch (Exception ex6) {
 			System.out.println(ex6);
 		}
 		try{
-			ThreeVector.angle(new ThreeVector(1,1,1), ThreeVector.ZERO);
+			ThreeVector.angle(ThreeVector.ZERO, new ThreeVector(1,1,1));
 		} catch (Exception ex7) {
 			System.out.println(ex7);
+		}
+		try{
+			ThreeVector.angle(new ThreeVector(1,1,1), ThreeVector.ZERO);
+		} catch (Exception ex8) {
+			System.out.println(ex8);
 		}
 	}
 
