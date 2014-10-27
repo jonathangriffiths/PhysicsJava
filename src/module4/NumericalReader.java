@@ -9,16 +9,16 @@ public class NumericalReader {
 	private double maxValue;
 	private int nValues;
 	private double sumValues;
-	private File outFileName = new File("/Users/Jono/Dropbox/Work/Java/PHAS3459/sampleData/module4output.txt");//default output
+	private File outFileName = new File("/Users/Jono/Dropbox/Work/Java/PHAS3459/sampleData/numbers.txt");//default output
 	private FileWriter fw;
 	private BufferedWriter b;
 	private PrintWriter pw;
+
 	public NumericalReader(){}//empty constructor, just holds the values we have already laid out.
 
 	//returns buffered reader from a URL - argument is a string with the url
 	public static BufferedReader brFromURL(String urlName) throws IOException{
-		URL u;
-		u = new URL (urlName);
+		URL u = new URL (urlName);
 		InputStream is = u.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader b = new BufferedReader(isr);
@@ -32,6 +32,7 @@ public class NumericalReader {
 		return b;
 	}
 
+	//allows setting of output file for analysis for an instance
 	public void setOutFile(File output){
 		outFileName=output;
 	}
@@ -47,12 +48,12 @@ public class NumericalReader {
 		b = new BufferedWriter(fw);
 		pw = new PrintWriter(b);
 	}
-	//does the analysis one line at a time, each line is the argument as a string
+	//does the analysis one line at a time, each line should be the argument as a string
 	public void analyseData(String s) throws IOException{
-		if(!s.isEmpty() && Character.isDigit(s.charAt(0))){//non empty, numeric starting row
+		if(!s.isEmpty() && Character.isDigit(s.charAt(0))){//non empty, numeric starting row as per format definition in exercise page
 			Scanner scan = new Scanner(s); //values separated by whitespace in file formatting
 			while (scan.hasNext()){
-				float token=scan.nextFloat(); //automatically formats to float
+				float token=scan.nextFloat(); //automatically formats token to float
 				System.out.println(token); //prints to screen
 				//print to file, one per line
 				pw.println(token);
@@ -78,6 +79,7 @@ public class NumericalReader {
 	public static void main(String[] args) {
 		NumericalReader data1 = new NumericalReader();
 		data1.setOutFile(new File("/Users/Jono/Dropbox/Work/Java/PHAS3459/sampleData/module4OutputData1.txt"));
+		//haven't used numbers.txt but commenting out the line above will achieve this
 		try {
 			BufferedReader reader = brFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module4/module4_data1.txt");
 			String line = "";
@@ -89,10 +91,12 @@ public class NumericalReader {
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
+			//this doesn't return very useful things when you mess up the url...
 		}
+		
 		NumericalReader data2=new NumericalReader();
 		data2.setOutFile(new File("/Users/Jono/Dropbox/Work/Java/PHAS3459/sampleData/module4OutputData2.txt"));
-
+		//haven't used numbers.txt but commenting out the line above will achieve this
 		try {
 			BufferedReader reader = brFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module4/module4_data2.txt");
 			String line = "";

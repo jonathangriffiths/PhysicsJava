@@ -2,9 +2,10 @@ package module4;
 import java.io.*;
 import java.net.URL;
 import java.util.Scanner;
+
 public class WordCounter {
 
-	//returns user input as a string (return to break)
+	//returns user input as a string (return to end input)
 	public static String getStringFromKeyword() throws IOException{
 		InputStreamReader r = new InputStreamReader (System.in);
 		BufferedReader b = new BufferedReader(r);
@@ -23,11 +24,11 @@ public class WordCounter {
 			Scanner s = new Scanner(b); // going to the test URL demonstrates we are fine looking for whitespace for our design
 			//sum word loop
 			int sum=0;
-			while(s.hasNext()){ //function returns true or false by itself
+			while(s.hasNext()){ 
 				sum++;
 				s.next();
 			}
-			s.close(); // not strictly necessary for function but surely good practice
+			s.close(); 
 			return sum;
 
 	}
