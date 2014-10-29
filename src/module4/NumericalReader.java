@@ -26,8 +26,7 @@ public class NumericalReader {
 	}
 	//returns buffered reader from a file - argument is a string with the file location
 	public static BufferedReader brFromFile(String filename) throws FileNotFoundException{
-		FileReader fr;
-		fr = new FileReader(filename);
+		FileReader fr = new FileReader(filename);
 		BufferedReader b = new BufferedReader(fr);
 		return b;
 	}
