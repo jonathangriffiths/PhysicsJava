@@ -16,13 +16,13 @@ public class SquareMatrix {
 		matrix=elements;
 	}
 
-	public SquareMatrix unitMatrix(int size) throws Exception{
+	public static SquareMatrix unitMatrix(int size) throws Exception{
 		if(size<=0){throw new Exception("Can't do unit matrix of size <1");}
 		double[][] array = new double[size][size];
-		for(int i=0; i<size; i++) { array[i][i]=0; }
+		for(int i=0; i<size; i++) { array[i][i]=1;}
 		return new SquareMatrix(array);
 	}
-	
+
 	public static SquareMatrix add(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
 		//Check dimensions
 		if(sm1.nCols != sm2.nCols || sm1.nRows != sm2.nRows){
@@ -39,7 +39,7 @@ public class SquareMatrix {
 		//finish
 		return newMatrix;
 	}
-	
+
 	public static SquareMatrix subtract(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
 		//Check dimensions
 		if(sm1.nCols != sm2.nCols || sm1.nRows != sm2.nRows){
@@ -56,7 +56,7 @@ public class SquareMatrix {
 		//finish
 		return newMatrix;
 	}
-	
+
 	public static SquareMatrix multiply(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
 		//Check dimensions
 		if(sm1.nCols != sm2.nCols || sm1.nRows != sm2.nRows){ 
@@ -68,14 +68,14 @@ public class SquareMatrix {
 		for(int i=0; i<sm1.nCols; i++){
 			for(int j=0; j<sm1.nCols; j++){
 				for(int k=0; k<sm1.nCols; k++){
-					newMatrix.matrix[i][j] += sm1.matrix[i][k] * sm2.matrix[k][j]; //TODO make this work
+					newMatrix.matrix[i][j] += sm1.matrix[i][k] * sm2.matrix[k][j]; 
 				}
 			}
 		}
 		//finish
 		return newMatrix;
 	}
-	
+
 	public String toString(){ //TODO get some formatting to stop things becoming misaligned.
 		StringBuilder strb=new StringBuilder();
 		for(int i=0; i<nRows; i++){
@@ -110,6 +110,6 @@ public class SquareMatrix {
 	}
 
 
-	
-	
+
+
 }
