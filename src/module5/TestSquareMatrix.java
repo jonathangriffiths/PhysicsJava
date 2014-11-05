@@ -1,7 +1,5 @@
 package module5;
 
-import java.util.Arrays;
-
 
 public class TestSquareMatrix {
 
@@ -56,9 +54,6 @@ public class TestSquareMatrix {
 			System.out.println("CD is not equal to the unit matrix of its size.");
 		}
 		
-		
-		
-
 		} catch (Exception e){
 			System.out.println("EXCEPTION! Error message: \n"+e.getMessage());
 		}

@@ -28,6 +28,7 @@ public class DataAnalysis {
 			points.add(pointTemp);
 			s.nextLine();
 		}
+		s.close();
 		return points;
 	}
 	
@@ -36,6 +37,7 @@ public class DataAnalysis {
 		int arraySize=values.size();
 		double GOFtotal=0;
 		
+		//loop goodness of fit for each point
 		for(int i = 0; i<arraySize; i++){
 			double xVal = (values.get(i)).getX();
 			double theoryVal=order.y(xVal);
@@ -51,14 +53,15 @@ public class DataAnalysis {
 
 	public static void main(String[] args) {
 		try {
+			//complete exercises
 			Theory two = new Theory(2);
 			Theory four = new Theory(4);
 			ArrayList<DataPoint> dataset = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module5/module5-xy.txt");
 			double powertwo=goodnessOfFit(two, dataset);
 			double powerfour=goodnessOfFit(four, dataset);
 			
-			System.out.format("The chi statistic for X^2 is: %.3f \n", powertwo);
-			System.out.format("The chi statistic for X^4 is: %.3f \n", powerfour);
+			System.out.format("The chi squared statistic for the X^2 model is: %.3f \n", powertwo);
+			System.out.format("The chi squared statistic for the X^4 model is: %.3f \n", powerfour);
 			
 			if(powertwo>powerfour){System.out.println("The X^4 model fits better than the X^2 model");}
 			else if(powertwo<powerfour){System.out.println("The X^2 model fits better than the X^4 model");}
@@ -66,7 +69,7 @@ public class DataAnalysis {
 			else{System.out.println("The comparison between the two models has not quite worked here");}
 
 		} catch (IOException e) {
-			System.out.println("BALLS");
+			System.out.println("Exception!");
 			e.printStackTrace();
 		}
 
