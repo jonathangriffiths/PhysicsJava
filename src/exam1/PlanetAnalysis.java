@@ -26,6 +26,7 @@ public class PlanetAnalysis {
 		String line ="";
 		//skip descriptive line
 		br.readLine(); 
+		//read in the data line by line from the bufferedreader
 		while((line = br.readLine()) != null){
 			//while we have lines, scan lines
 			Scanner s = new Scanner(line);
@@ -60,7 +61,7 @@ public class PlanetAnalysis {
 		ArrayList<Planet> methodList = new ArrayList<Planet>();
 		//loop over all planets
 		for(int i=0; i<allData.size(); i++){
-			//key equals - if method equals Method.
+			//key equals - if method for planet equals Method we keep it.
 			if (Method.equals(allData.get(i).discMeth)){
 				methodList.add(allData.get(i));
 			}
@@ -78,9 +79,9 @@ public class PlanetAnalysis {
 
 			//let's find the closest exoplanet out of all of them:
 			double closestDistance=Double.MAX_VALUE;
-			int closestIndex = -1; //should produce an error if the code doesn't work
+			int closestIndex = -1; //should produce an error if the code doesn't work, useful for testing
 			//loop through the ArrayList updating when we find a closer planet
-			//Could have used a Comparator but we son't want to just sort by mass
+			//Could have used a Comparator but we don't want to just sort by distance
 			for(int i=0; i<list.size(); i++){
 				if(list.get(i).planEarth!=Double.NaN && list.get(i).planEarth < closestDistance){//discount NaNs
 					closestDistance = list.get(i).planEarth;
@@ -105,6 +106,7 @@ public class PlanetAnalysis {
 			//Let us loop through the methods, printing the information that we want
 			//master loop does one method at a time
 			for(int i =0; i<methods.size(); i++){
+				//init method data
 				ArrayList<Planet> methodData = arrayListFromMethod(list, methods.get(i));
 				System.out.println("\nWe are looking at the method "+methods.get(i));
 				System.out.println("There are "+methodData.size()+" planets found by this method");
@@ -132,12 +134,11 @@ public class PlanetAnalysis {
 				System.out.println("The lightest planet from this method follows:\n"+methodData.get(massIndex).toString());
 			}
 
-
 		} catch (IOException e) {
 			System.out.println("Getting the BR from URL has failed. See the message:\n"+e.getMessage());
 			//I appreciate it's not ideal to lump it all into one try/catch but had a bit of a panic over equals() vs. == so lost time
 		}
-		
+
 
 	}
 

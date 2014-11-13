@@ -1,9 +1,9 @@
 package module5;
 
 public class DataPoint {
-	double x;
-	double y;
-	double ey;
+	private double x;
+	private double y;
+	private double ey;
 
 	public DataPoint(double X, double Y, double EY){
 		x=X;
