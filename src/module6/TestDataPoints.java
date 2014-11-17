@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class TestDataPoints {
 	public static List<DataPoint> dataFromURL(String urlName) throws IOException{
-		//init readers, scanner, List, string
+		//init readers, scanner, empty List, empty string
 		URL u = new URL (urlName);
 		InputStream is = u.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
@@ -53,7 +53,7 @@ public class TestDataPoints {
 			for(DataPoint point : data){System.out.println(point.toString());}
 
 		} catch (IOException e) {
-			System.out.println("The URL probably has issues. Error message:");
+			System.out.println("The URL probably has issues. Exception message:");
 			System.out.println(e.getMessage());
 		}
 

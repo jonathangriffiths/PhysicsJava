@@ -2,7 +2,7 @@ package module6;
 
 public class PowerLawTheory implements Theory {
 	//implements Theory interface to do x^n relationships
-	double n;
+	protected double n;
 
 	public PowerLawTheory(double power){
 		n=power;

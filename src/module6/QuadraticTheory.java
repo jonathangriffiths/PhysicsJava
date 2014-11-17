@@ -2,9 +2,9 @@ package module6;
 
 public class QuadraticTheory implements Theory {
 	//Implements the Theory interface to do a(x^2) + bx + c relationships
-	double a;
-	double b;
-	double c;
+	protected double a;
+	protected double b;
+	protected double c;
 	
 
 	public QuadraticTheory(double x2_coef, double x_coef, double constant){
@@ -20,7 +20,7 @@ public class QuadraticTheory implements Theory {
 	}
 
 	public String toString(){
-		String str = a + " x^2 + " + b + " x + " + c;
+		String str = a + "x^2 + " + b + "x + " + c;
 		return str;
 	}
 }

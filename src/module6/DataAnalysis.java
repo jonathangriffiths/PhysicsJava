@@ -29,12 +29,12 @@ public class DataAnalysis {
 	}
 
 	public static void main(String[] args) {
-		//init data - list because we might want to sort it if expanding the program
+		//init data - list because we might want to sort data if expanding the analysis
 		List<DataPoint> data = null;
 		try {
 			data = TestDataPoints.dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
 		} catch (IOException e) {
-			System.out.println("The URL probably has issues. Error message:");
+			System.out.println("The URL probably has issues. Exception message:");
 			System.out.println(e.getMessage());
 		}
 

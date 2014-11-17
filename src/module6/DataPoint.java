@@ -2,9 +2,9 @@ package module6;
 
 public class DataPoint {
 	//init var
-	private double x;
-	private double y;
-	private double ey;
+	protected double x;
+	protected double y;
+	protected double ey;
 
 	public DataPoint(double x, double y, double ey){
 		this.x=x;

@@ -13,7 +13,7 @@ public class ChiSquared implements GoodnessOfFitCalculator {
 		double yTheory = th.y(dp.getX());
 		//find chi
 		double value = (dp.getY() - yTheory)/dp.getEY();
-		//then square it, easier to read this way since there is not a standard ^ operator in Java
+		//then square it, more readable this way since there is not a standard ^ operator in Java
 		value = value * value;
 		return value;
 	}
