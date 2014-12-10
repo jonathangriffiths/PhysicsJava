@@ -35,7 +35,7 @@ public class ThreadsMain {
 		System.out.println("The largest number checked so far is: "+numChecker.getNumberChecking());
 		List<Integer> primeList=numChecker.getList();
 		System.out.println("The highest prime found is: "+primeList.get(primeList.size()-1));
-		System.out.println("The total primes found is: "+primeList.size());
+		System.out.println("The total number of primes found is: "+primeList.size());
 		
 		
 	}
